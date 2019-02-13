@@ -1,0 +1,4 @@
+name: Kafka
+depend:
+    docker:
+        template: kafka.docker.tpl

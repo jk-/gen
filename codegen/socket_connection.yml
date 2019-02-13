@@ -1,0 +1,4 @@
+name: SocketConnection
+lang:
+    python:
+        template: socket_connection.py.tpl

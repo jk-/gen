@@ -1,0 +1,8 @@
+Bot
+	SocketConnection Config(host):Config(port)
+        on success send PASS Config(pass)
+        on success send NICK Config(nick)
+        on success Config(channels) send join channel
+    SocketConnection on recv
+        KafkaSchema:JsonFormat {username: username, message: message}
+            KafkaConsumer saves Config(twitch_topic)

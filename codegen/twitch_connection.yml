@@ -1,0 +1,12 @@
+name: TwitchConnection
+interfaces: SocketConnection
+methods:
+    join_channel:
+        - send `JOIN \#%s`
+    send_pass:
+        - send `PASS %s`
+    send_nick:
+        - send `NICK %s`
+params:
+    host: irc.twitch.tv
+    port: 6667

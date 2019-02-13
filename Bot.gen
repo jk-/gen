@@ -1,0 +1,94 @@
+below is a representation, but more "programmer-ish".
+Would like the ability to speak normally and have the code generator
+take over. We could use spacy to parse the sentences out and tokenize
+parts of the words. Maybe detect case to help?
+
+
+TwitchBot TalisConfig TwitchSocketConnection
+    TwitchConnection
+        connect
+        Capture TwitchConnection.recv
+            Expects TwitchConnection.connected
+            TalisConfig.channels TwitchConnection.join channel
+        on recv Log
+            Expects TalisConfig.log_level debug
+            StdOut write output
+        on send Log
+            StdOut write output
+
+This example below is more "human" speak. it would be the ideal
+form of instructing a computer to create an application
+with higher level language.
+
+'''
+Create a Twitch Bot that connects to twitch irc.
+Make sure to login with my username and password.
+On receiving a message save it to Kafka on the topic
+taco_bell in a json format. Also, connect to a kafka
+topic bot_messages. On receiving a message from bot_messages
+send that data to twitch.
+
+Create a service that reads the kafka topic taco_bell.
+Name the service commands.
+On receiving a message check if the message has the commands
+inside of my supplied command list. If it does, send the value
+of the command to the chat by saving the data to a Kafka
+topic called bot_messages.
+'''
+
+One of the problems will be "with my username and password",
+how do we know where to find this information programattically?
+Do we ask the programmer for input? Can we instruct the developer
+in a systematic way?
+
+
+> I see you need a username and password, how am I going to find this?
+>> The password is stored in .oauth as a single line item
+> Ok cool, how about the username?
+>> Just use 'jonthomask'
+> Alright you dumbass, i'll code it.
+
+> I've already found othher people who made a TwitchBot, Should I steal their code?
+>> Oh, of course.
+
+
+gen
+> Welcome, human.
+> Tell me what you want me to program.
+<insert paragraph above>
+
+
+import TwitchSocketConnection
+import TalisConfig
+
+
+class Bot(object):
+    def __init__(self, a_6e04ed33c4ce147b086b6b83b9eb52a4: TwitchConnnection, b_cf0a6c82dc398060a3362abb257d6899: TwitchConfig):
+        self.a_6e04ed33c4ce147b086b6b83b9eb52a4 = TwitchConnection()
+        self.b_cf0a6c82dc398060a3362abb257d6899 = TalisConfig()
+
+    def on_sucess_950c717c7497ed54bb2b4f79db6c424e(self):
+        channels = self.b_cf0a6c82dc398060a3362abb257d6899.channels
+        if channels:
+            for channel in channels:
+                self.a_6e04ed33c4ce147b086b6b83b9eb52a4.join_channel(channel)
+
+    def run(self):
+        self.a_6e04ed33c4ce147b086b6b83b9eb52a4.connect()
+        capture = self.a_6e04ed33c4ce147b086b6b83b9eb52a4.recv(1024)
+
+
+
+    def on_sucess_bc0067c51521afe2499aa4aa6c94016f(self, value):
+        self.a_6e04ed33c4ce147b086b6b83b9eb52a4.join_channel(value)
+
+    def on_recv_md5_hash():
+        pass
+
+if __name__ = "__main__":
+    bot_1448e86d90e0feb307c2894c24e87767 = Bot()
+    bot_1448e86d90e0feb307c2894c24e87767.run()
+
+    bot_1448e86d90e0feb307c2894c24e87767.connect()
+    bot_1448e86d90e0feb307c2894c24e87767.on_sucess_950c717c7497ed54bb2b4f79db6c424e()
+    bot_1448e86d90e0feb307c2894c24e87767.on_recv_md5_hash()

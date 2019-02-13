@@ -1,0 +1,7 @@
+name: Config
+config:
+    pass: SingleLineFile(file_path)
+    file_path: path/to/.oauth
+    nick: talis_jtk
+    file_path_channels: path/to/channels.txt
+    channels: MultilineFile(file_path_channels)
