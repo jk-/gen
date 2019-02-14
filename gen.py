@@ -1,43 +1,23 @@
 import re
 import os
 import yaml
+
 from dotmap import DotMap
 
-from gen import generate_class
-from gen import Instruction
 from gen import Generator
-
-
-def open_file(file_name, code='r'):
-    file = open(file_name, code)
-    data = file.read()
-    file.close()
-    return data
-
-
-def is_camel_case(value):
-    return True if re.match(r'(^([A-Z]{1}[a-zA-Z]+$))', value) else False
-
-
-def camel_to_snake(value):
-    if is_camel_case(value):
-        split = re.sub(r'([A-Z]{1})', r'_\1', value)
-        split = split[1:]
-        return split.lower()
-
-    return value
+from gen import util
 
 
 def main():
-    data = open_file('app.gen', 'r')
-
     generator = Generator()
 
+    data = util.open_file('app.gen')
     instructions = data.split("\n")
     for instruction in instructions:
         generator.add_instruction(instruction)
 
     generator.process()
+
 
 if __name__ == "__main__":
     main()
