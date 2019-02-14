@@ -1,10 +1,8 @@
 TwitchBot TwitchConnection Config
-    TwitchConnection:init_join_channel
+    connect TwitchConnection
         CAP recv
         EXP CAP 001
         SET connected
-        Config.channels join_channel
-    connect
     send_pass Config.pass
     send_nick Config.nick
-    init_join_channel
+    join_channel Config.channels
