@@ -7,14 +7,14 @@ class Tokenize(object):
         we can process them accordingly.
 
 
-        CamelCase : OBJECT
-            : INDENT
-        lowercase: METHOD
-        testing_method: METHOD
-        `variable`: VARIABLE
-        Config.test: OBJECT_VARIABLE
-        ClassHere:test: METHOD_CREATE
-        CAP: BUILT_IN
+        CamelCase : TOKEN_OBJECT
+            : TOKEN_INDENT
+        lowercase: TOKEN_METHOD
+        testing_method: TOKEN_METHOD
+        `variable`: TOKEN_VARIABLE
+        Config.test: TOKEN_OBJECT_VARIABLE
+        ClassHere:test: TOKEN_METHOD_CREATE
+        CAP: TOKEN_BUILD_IN
     '''
     def __init__(self, instruction: str):
         pass

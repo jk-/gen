@@ -5,7 +5,6 @@ from dotmap import DotMap
 
 from gen import generate_class
 
-
 def is_camel_case(value):
     return True if re.match(r'(^([A-Z]{1}[a-zA-Z]+$))', value) else False
 
