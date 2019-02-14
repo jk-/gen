@@ -9,7 +9,7 @@ class Instruction(object):
         instruction str a single line of instruction
     '''
     def __init__(self, instruction: str):
-        self.id = hashlib.md5(self.instruction.encode('utf-8'))
+        self.id = hashlib.md5(instruction.encode('utf-8')).hexdigest()
         self.instruction = instruction
         self.parent = None
         self.child = None
