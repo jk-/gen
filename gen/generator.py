@@ -15,6 +15,12 @@ class Generator(object):
     def process(self):
         pass
 
+    def last(self):
+        return self.instructions[-1]
+
     def __iter__(self):
         for i in self.instructions:
             yield i
+
+    def __len__(self):
+        return len(self.instructions)

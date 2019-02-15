@@ -11,8 +11,9 @@ from gen import util
 def main():
     generator = Generator()
 
-    data = util.open_file('app.gen')
+    data = util.file_contents('app.gen')
     instructions = data.split("\n")
+
     for instruction in instructions:
         generator.add_instruction(instruction)
 

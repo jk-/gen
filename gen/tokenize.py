@@ -1,3 +1,8 @@
+import re
+
+
+def token_object(value: str):
+    return re.match(r'(^([A-Z]{1}[a-zA-Z]+$))', value)
 
 
 def tokenize(string: str):

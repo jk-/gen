@@ -1,6 +1,6 @@
 
 
-def open_file(file_name, code='r'):
+def file_contents(file_name, code='r'):
     file = open(file_name, code)
     data = file.read()
     file.close()
